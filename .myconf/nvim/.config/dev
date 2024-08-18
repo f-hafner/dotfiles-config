@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+
+# replaces the nvim configuration with a symling to this location
+rm -rf ~/.config/nvim
+ln -s $(pwd) ~/.config/nvim
+
