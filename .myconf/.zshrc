@@ -109,9 +109,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-if [ -f ~/.myconf/.sh_aliases ]; then
-	. ~/.myconf/.sh_aliases
-fi
+#if [ -f ~/.myconf/.sh_aliases ]; then
+#	. ~/.myconf/.sh_aliases
+#fi
 
 if [ -f "/home/flavio/miniconda3/etc/profile.d/conda.sh" ]; then
     . "/home/flavio/miniconda3/etc/profile.d/conda.sh"
