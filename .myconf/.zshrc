@@ -134,7 +134,7 @@ alias luamake="$HOME/lua-language-server/3rd/luamake/luamake"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export GIT_CONFIG_GLOBAL="$HOME/.myconf/.gitconfig"
-
+export KITTY_CONFIG_DIRECTORY="$HOME/.myconf/kitty/"
 
 
 
