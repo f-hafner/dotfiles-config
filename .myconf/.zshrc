@@ -80,7 +80,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# User configuratin
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -134,7 +134,6 @@ alias luamake="$HOME/lua-language-server/3rd/luamake/luamake"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export GIT_CONFIG_GLOBAL="$HOME/.myconf/.gitconfig"
-
 
 
 
