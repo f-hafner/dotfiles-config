@@ -64,7 +64,7 @@ ZSH_THEME="robbyrussell"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM="$HOME/.myconf/zsh_custom/"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -109,8 +109,8 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-if [ -f ~/.myconf/.bash_aliases ]; then
-	. ~/.myconf/.bash_aliases
+if [ -f ~/.myconf/.sh_aliases ]; then
+	. ~/.myconf/.sh_aliases
 fi
 
 if [ -f "/home/flavio/miniconda3/etc/profile.d/conda.sh" ]; then
@@ -129,7 +129,7 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$PATH:/opt/nvim-linux64/bin"
 
 
-alias luamake="/home/flavio/lua-language-server/3rd/luamake/luamake"
+alias luamake="$HOME/lua-language-server/3rd/luamake/luamake"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
