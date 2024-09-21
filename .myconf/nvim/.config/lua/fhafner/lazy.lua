@@ -30,7 +30,7 @@ require("lazy").setup({
 	    -- or                              , branch = '0.1.x',
 	    dependencies = { 'nvim-lua/plenary.nvim' }
     },
-    { "rose-pine/neovim", name = "rose-pine" },
+    {"rose-pine/neovim", name = "rose-pine" },
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {"nvim-treesitter/playground"},
     {"theprimeagen/harpoon"},

@@ -30,7 +30,8 @@ lsp.extend_lspconfig({
 require('mason').setup({})
 require('mason-lspconfig').setup({
     -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-    ensure_installed = {'ruff', 'ltex', 'sqls'}, -- can't install pyright, bashls b/c of npm failure 
+    ensure_installed = {'pyright', 'bashls', 'ruff', 'ltex', 'sqls'},
+    -- https://github.com/williamboman/mason-lspconfig.nvim/issues/273
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
