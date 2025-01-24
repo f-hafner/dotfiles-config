@@ -1,5 +1,7 @@
 local lsp = require('lsp-zero')
 
+-- lsp.preset("recommended")
+-- lsp.setup()
 
 
 
@@ -28,9 +30,12 @@ lsp.extend_lspconfig({
 
 
 require('mason').setup({})
+require("mason-lspconfig").setup()
+
+
 require('mason-lspconfig').setup({
     -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
-    ensure_installed = {'pyright', 'bashls', 'ruff', 'ltex', 'sqls'},
+    ensure_installed = {'pyright', 'bashls', 'ruff', 'ltex', 'sqls', "lua_ls"},
     -- https://github.com/williamboman/mason-lspconfig.nvim/issues/273
     handlers = {
         function(server_name)
@@ -38,4 +43,39 @@ require('mason-lspconfig').setup({
         end,
     }
 })
+
+
+---
+-- Autocompletion config
+---
+local cmp = require('cmp')
+
+cmp.setup({
+  sources = {
+    {name = 'nvim_lsp'},
+  },
+  mapping = cmp.mapping.preset.insert({
+
+    -- Navigate between completion items
+    ['<C-p>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
+    ['<C-n>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+
+    -- `Enter` key to confirm completion
+    ['<CR>'] = cmp.mapping.confirm({select = false}),
+
+    -- Ctrl+Space to trigger completion menu
+    ['<C-Space>'] = cmp.mapping.complete(),
+
+    -- Scroll up and down in the completion documentation
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+  }),
+  snippet = {
+    expand = function(args)
+      vim.snippet.expand(args.body)
+    end,
+  },
+})
+
+
 
