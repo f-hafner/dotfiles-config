@@ -136,5 +136,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export GIT_CONFIG_GLOBAL="$HOME/.myconf/.gitconfig"
 export KITTY_CONFIG_DIRECTORY="$HOME/.myconf/kitty/"
 
+# For AMUSE project
+export OMPI_MCA_btl_tcp_if_include=lo
 
 
