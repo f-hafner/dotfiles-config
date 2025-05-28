@@ -140,3 +140,9 @@ export KITTY_CONFIG_DIRECTORY="$HOME/.myconf/kitty/"
 export OMPI_MCA_btl_tcp_if_include=lo
 
 
+# Pipx
+autoload -U bashcompinit
+bashcompinit
+eval "$(register-python-argcomplete pipx)"
+
+
