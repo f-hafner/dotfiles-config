@@ -126,7 +126,7 @@ eval "$(pyenv init -)"
 
 eval "$(pyenv virtualenv-init -)"
 
-export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 
 alias luamake="$HOME/lua-language-server/3rd/luamake/luamake"
