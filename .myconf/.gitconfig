@@ -25,3 +25,4 @@
     co = checkout
     sw = switch
     fpush = push --force-with-lease
+	glog = log --oneline --graph --all
