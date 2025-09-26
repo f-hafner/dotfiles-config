@@ -42,6 +42,14 @@ require("lazy").setup({
     {'hrsh7th/nvim-cmp'},
     {"williamboman/mason.nvim"},
     {"williamboman/mason-lspconfig.nvim"},
+    {"iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      build = "cd app && npm install",
+      init = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+      end,
+      ft = { "markdown" },
+    },
 --    {
 --        'MeanderingProgrammer/render-markdown.nvim',
 --        dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
