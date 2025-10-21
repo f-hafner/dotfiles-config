@@ -20,12 +20,28 @@ local lsp_attach = function(client, bufnr)
   vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
   vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
   vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+  vim.keymap.set('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
+  vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
+  vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
 end
 
 lsp.extend_lspconfig({
   sign_text = true,
   lsp_attach = lsp_attach,
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
+vim.diagnostic.config({
+    virtual_text = true,  -- Show diagnostics inline
+    signs = true,         -- Show signs in the sign column
+    update_in_insert = false,  -- Don't update diagnostics while typing
+    underline = true,     -- Underline problematic code
+    severity_sort = true, -- Sort by severity
+    float = {
+      border = 'rounded',
+      source = 'always',  -- Show source (e.g., "pyright")
+      header = '',
+      prefix = '',
+    },
 })
 
 
