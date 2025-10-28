@@ -53,9 +53,12 @@ require('mason-lspconfig').setup({
     -- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
     ensure_installed = {'pyright', 'bashls', 'ruff', 'ltex', 'sqls', "lua_ls"},
     -- https://github.com/williamboman/mason-lspconfig.nvim/issues/273
+    -- https://vonheikemen.github.io/learn-nvim/feature/lsp-setup.html
     handlers = {
         function(server_name)
-            require('lspconfig')[server_name].setup({})
+            -- require('lspconfig')[server_name].setup({})
+            vim.lsp.config(server)
+            vim.lsp.enable(server)
         end,
     }
 })
